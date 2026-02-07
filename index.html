@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>For Anushka 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        overflow: hidden;
+        color: white;
+    }
+
+    h1 {
+        margin-top: 30px;
+        font-size: 42px;
+        animation: fadeIn 2s;
+    }
+
+    .teddy {
+        width: 200px;
+        height: auto;
+        margin: 20px auto;
+        animation: bounce 2s infinite;
+    }
+
+    .typing {
+        font-size: 24px;
+        width: 80%;
+        margin: 20px auto;
+        min-height: 60px;
+    }
+
+    .btn {
+        padding: 15px 35px;
+        font-size: 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 15px;
+        transition: 0.3s;
+    }
+
+    .yes {
+        background: #2ecc71;
+        color: white;
+    }
+
+    .no {
+        background: #e74c3c;
+        color: white;
+        position: absolute;
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+    }
+
+    .proposal-box {
+        display: none;
+        margin-top: 30px;
+        animation: zoomIn 1.5s;
+    }
+
+    .final {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    .heart {
+        position: absolute;
+        font-size: 20px;
+        color: red;
+        animation: floatUp 5s linear infinite;
+    }
+
+    .couple-teddy {
+        margin-top: 30px;
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        animation: zoomIn 1.5s;
+    }
+
+    @media screen and (max-width: 768px) {
+        .couple-teddy {
+            max-width: 250px;
+            margin-top: 20px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .couple-teddy {
+            max-width: 200px;
+            margin-top: 15px;
+        }
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-800px); opacity: 0; }
+    }
+
+    @keyframes bounce {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+        from { transform: scale(0); }
+        to { transform: scale(1); }
+    }
+
+    /* Mobile Responsive Styles */
+    @media screen and (max-width: 768px) {
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        .teddy {
+            width: 150px;
+            margin: 10px 0;
+        }
+
+        .typing {
+            font-size: 18px;
+            width: 95%;
+            margin: 15px auto;
+            padding: 0 10px;
+            min-height: 50px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 16px;
+            margin: 10px;
+            min-width: 120px;
+            touch-action: manipulation;
+        }
+
+        .final {
+            font-size: 24px;
+            margin-top: 15px;
+            padding: 0 15px;
+            line-height: 1.4;
+        }
+
+        .proposal-box {
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        .heart {
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        h1 {
+            font-size: 24px;
+            margin-top: 15px;
+        }
+
+        .teddy {
+            width: 120px;
+        }
+
+        .typing {
+            font-size: 16px;
+            width: 98%;
+            margin: 10px auto;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 8px;
+            min-width: 100px;
+        }
+
+        .final {
+            font-size: 20px;
+        }
+    }
+
+    /* Landscape mobile orientation */
+    @media screen and (max-width: 768px) and (orientation: landscape) {
+        h1 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .teddy {
+            width: 120px;
+        }
+
+        .typing {
+            font-size: 16px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Anushka 💕</h1>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmc5enMyYmdjZmU1NGZsZ2Rjem56NTBoM2tsaGdseDJjeGFrYWxkYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ke4tPBQNc30blM4zgv/giphy.gif" alt="Teddy" class="teddy">
+
+<div class="typing" id="text"></div>
+
+<div class="proposal-box" id="proposal">
+    <p class="final">Will you be mine forever? 💍🥺</p>
+    <button class="btn yes" onclick="yesClicked()">YES 💖</button>
+    <button class="btn no" id="noBtn" onmouseover="moveNo()">NO 😏</button>
+</div>
+
+<script>
+    const message = "You are my pookie, my smile, my peace... Every heartbeat of mine says your name 💖";
+    let i = 0;
+
+    function typeText() {
+        if (i < message.length) {
+            document.getElementById("text").innerHTML += message.charAt(i);
+            i++;
+            setTimeout(typeText, 70);
+        } else {
+            document.getElementById("proposal").style.display = "block";
+        }
+    }
+    typeText();
+
+    function moveNo() {
+        const noBtn = document.getElementById("noBtn");
+        const maxWidth = window.innerWidth - 100;
+        const maxHeight = window.innerHeight - 100;
+        noBtn.style.left = Math.random() * maxWidth + "px";
+        noBtn.style.top = Math.random() * maxHeight + "px";
+    }
+
+    // Also handle touch events for mobile
+    const noBtn = document.getElementById("noBtn");
+    if (noBtn) {
+        noBtn.addEventListener("touchstart", moveNo);
+    }
+
+    function yesClicked() {
+        const isMobile = window.innerWidth <= 768;
+        const fontSize = isMobile ? '24px' : '30px';
+        const h1Size = isMobile ? '28px' : '42px';
+        
+        document.body.innerHTML = `
+            <h1 style="font-size: ${h1Size}; margin-top: 30px; animation: fadeIn 2s;">I Love You Anushka 💖</h1>
+            <p style="font-size: ${fontSize}; padding: 0 20px; line-height: 1.5; margin-top: 20px;">You just made me the happiest person 🥹❤️</p>
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGF1dTU0ZHdyZXo3dHdvcTNldGthejBzOHRqZ3U1b2h4MWkyZHJqbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/p3nDRuY3BJb8gPFmdQ/giphy.gif" alt="Couple Teddy" class="couple-teddy" style="margin: 20px auto; display: block; max-width: ${isMobile ? '250px' : '300px'}; border-radius: 15px;">
+        `;
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.bottom = "0";
+        const isMobile = window.innerWidth <= 768;
+        const minSize = isMobile ? 15 : 20;
+        const maxSize = isMobile ? 25 : 30;
+        heart.style.fontSize = Math.random() * (maxSize - minSize) + minSize + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 250);
+</script>
+
+</body>
+</html>
